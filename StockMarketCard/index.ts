@@ -48,8 +48,7 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 	}
 
 	private getStockInfo(symbol: string, apiKey: string) {
-		// fetch("https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol="+symbol+"&apikey="+apiKey)
-			// var  proxy = "https://cors-anywhere.herokuapp.com/" ;
+		
 		fetch('https://query2.finance.yahoo.com/v8/finance/chart/'+ symbol)
 		
 			.then((response) => {
@@ -57,10 +56,6 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 			})
 			.then((quoteJson) => {
 				console.log(quoteJson);
-
-				// const Data=JSON.parse(quoteJson);
-
-				// console.log(Data.chart.result[symbol]);	 
 
 				this.createCard(quoteJson);
 
@@ -71,7 +66,7 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 
 	private createCard(quoteJson: any) {
 
-		// const Data=quoteJson;
+	
 		var chartPreviousCloseValue = parseFloat(quoteJson.chart.result["0"].meta.chartPreviousClose);
 		var regularMarketPriceValue= parseFloat(quoteJson.chart.result["0"].meta.regularMarketPrice);
 		
@@ -79,7 +74,7 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 		var CalculateChangePercentage = (CalculateChangeValue / chartPreviousCloseValue) *100 ;
 
 		let quoteDetails: QuoteDetails = {
-			// Symbol: Data.chart.result.meta.symbol,
+		
 
 			Symbol:quoteJson.chart.result["0"].meta.symbol,
 				
@@ -218,20 +213,14 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 		// Add code to update control view
 		this._context = context;
 		
-	var value =	this._context.parameters.Symbol.raw	; 
-
-		
-		// storing the latest context from the control.
 		 
 		let symbol:string = this._context.parameters.Symbol.raw || '';
 	
-		this.getStockInfo(symbol ,"hhh");
+		this.getStockInfo(symbol ,"no need");
 
-	
-		
+
 		
 	}
-
 	private wait(ms: any){
 		var start = new Date().getTime();
 		var end = start;
@@ -239,15 +228,6 @@ export class StockMarketCard implements ComponentFramework.StandardControl<IInpu
 		  end = new Date().getTime();
 	   }
 	 }
-	
-	
-	
-	
-
-	
-
-
-
 
 	/** 
 	 * It is called by the framework prior to a control receiving new data.  

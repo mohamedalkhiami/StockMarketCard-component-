@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "tyN1CE4Ch5cUDbFFiQbR84dsmsNmHvVNPZNWJlkqZ8h/H1UIA0UCW1VokbHrFY3A1hDVUdDl+KO+FKZJL7NC6w==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\MHD\\Desktop\\NewProject\\NewProject.pcfproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\MHD\\.nuget\\packages\\microsoft.powerapps.msbuild.pcf\\1.5.2\\microsoft.powerapps.msbuild.pcf.1.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}
